@@ -182,6 +182,25 @@ def sis_inferencia(valores_fuzzy):
     union_resultados = union(resultados)
     return union_resultados
 
+def resolucion(valor_defusificado):
+    baja = fuzzificacion_valor(valor_defusificado, egf_leve)
+    moderada = fuzzificacion_valor(valor_defusificado, egf_moderada)
+    alta = fuzzificacion_valor(valor_defusificado, egf_alta)
+    muy_alta = fuzzificacion_valor(valor_defusificado, egf_muy_alta)
+
+    maximo = max(baja, moderada, alta, muy_alta)
+
+    if(maximo == baja):
+        print("De acuerdo a las entradas, su nivel de gripe es bajo")
+    elif(maximo == moderada):
+        print("De acuerdo a las entradas, su nivel de gripe es moderada")
+    elif(maximo == alta):
+        print("De acuerdo a las entradas, su nivel de gripe es alta")
+    elif(maximo == muy_alta):
+        print("De acuerdo a las entradas, su nivel de gripe es muy alta")
+    
+    return 0
+
 def main():
     valores_usuario = []
     valores_fuzzy = {
@@ -201,6 +220,8 @@ def main():
     salida = fuzz.defuzz(escala_padecimiento,sistema_i,'centroid')# Este valor es el resultado de la desfusificacion y este hay que interpretarlo para dar un veredicto al paciente
 
     print(salida) 
+
+    resolucion(salida)
 
     fig, entradas = plt.subplots(2, sharex=True, sharey=True)
     entradas[0].plot(escala_padecimiento,sistema_i,label = 'baja')
