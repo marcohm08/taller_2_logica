@@ -70,7 +70,7 @@ def registra_temperatura():
 
 
 def preguntas_usuario(respuestas):
-    print("A continuacion se le consultara por el grado de sus sintomas, debe contestar de 0(ausencia de sintoma) a 10(sintoma muy fuerte), puede responder con decimasles como 1.2 ")
+    print("A continuacion se le consultara por el grado de sus sintomas, debe contestar de 0(ausencia de sintoma) a 10(sintoma muy fuerte), puede responder con decimales como 1.2 ")
     preguntas = [
         "Nivel de dolor de cabeza: ",
         "Nivel de nauseas",
@@ -191,13 +191,13 @@ def resolucion(valor_defusificado):
     maximo = max(baja, moderada, alta, muy_alta)
 
     if(maximo == baja):
-        print("De acuerdo a las entradas, su nivel de gripe es bajo")
+        print("De acuerdo a las entradas, su nivel de Influenza es bajo")
     elif(maximo == moderada):
-        print("De acuerdo a las entradas, su nivel de gripe es moderada")
+        print("De acuerdo a las entradas, su nivel de Influenza es moderada")
     elif(maximo == alta):
-        print("De acuerdo a las entradas, su nivel de gripe es alta")
+        print("De acuerdo a las entradas, su nivel de Influenza es alta")
     elif(maximo == muy_alta):
-        print("De acuerdo a las entradas, su nivel de gripe es muy alta")
+        print("De acuerdo a las entradas, su nivel de Influenza es muy alta")
     
     return 0
 
